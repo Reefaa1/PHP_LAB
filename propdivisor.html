@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script>
+            function checkNumberType()
+            {
+                let num=parseInt(prompt("Enter a Posititve Number"));
+                if(isNaN(num) || num<=0){
+                    alert("Please enter a Valid Positive Number");
+                    return;
+                }
+                let sum=0;
+                for(let i=1;i<num;i++){
+                    if(num%i==0){
+                        sum+=i;
+                    }
+                }
+                if(sum==num){
+                    alert(num + " is a Perfect Number");
+                }
+                else if(sum<num){
+                    alert(num + " is a Deficient Number");
+                }
+                else{
+                    alert(num + " is an Abundant Number");
+                }
+            }
+        </script>
+    </head>
+    <body onload="checkNumberType()">
+        
+
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script>
+            function checkTriangle() {
+                let a = parseFloat(prompt("Enter side a"));
+                let b = parseFloat(prompt("Enter side b"));
+                let c = parseFloat(prompt("Enter side c"));
+                
+                let type = "";
+                let area = 0;
+
+                if (a + b > c && a + c > b && b + c > a) {
+                    if (a === b && b === c)
+                        type = "Equilateral";
+                    else if (a === b || b === c || c === a)
+                        type = "Isosceles";
+                    else
+                        type = "Scalene";
+
+                    let s = (a + b + c) / 2;
+                    area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+                    
+                    alert("Triangle is: " + type + "\nArea: " + area.toFixed(2));
+                } else {
+                    alert("The given sides do not form a valid triangle.");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="checkTriangle()">Check Triangle</button>
+    </body>
+</html>
